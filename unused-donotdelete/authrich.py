@@ -23,4 +23,3 @@ def authenticate():
     v_LOCATION="us-central1"
     v_CREDENTIAL=credentials
     vertexai.init(project=v_PROJECT_ID, location=v_LOCATION, credentials=v_CREDENTIAL)
-    #vertexai.init(project=v_PROJECT_ID, location=v_LOCATION)

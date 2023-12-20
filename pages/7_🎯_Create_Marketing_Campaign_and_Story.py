@@ -1,8 +1,8 @@
 import streamlit as st
 import call_gemini as genai
 
-st.header("Create a Marketing Campaign and a Story")
-st.write("Using Gemini Pro, Google Large Language Model ", divider="rainbow")
+st.header("Create a Marketing Campaign and a Story", divider="rainbow")
+st.write("Using Gemini Pro, Google Large Language Model ")
 
 #tab1, tab2, tab3, tab4 = st.tabs(["Generate story","Marketing campaign",  "Image Playground", "Video Playground"])
 tab1, tab2 = st.tabs(["Marketing Campaign","Generate a Story"])

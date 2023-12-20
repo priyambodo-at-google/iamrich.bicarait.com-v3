@@ -1,5 +1,4 @@
 import streamlit as st
-import call_vertex_api as vapi
 import webbrowser
 import os
 

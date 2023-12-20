@@ -25,6 +25,10 @@ from langchain.vectorstores import Chroma
 # LangChain
 print(f"LangChain version: {langchain.__version__}")
 
+# Set Environment in your Shell
+#export GCP_PROJECT='work-mylab-machinelearning'     # Change this
+#export GCP_REGION='us-central1'                     # If you change this, make sure the region is supported.
+
 # Vertex AI
 from google.cloud import aiplatform
 import vertexai

@@ -1,6 +1,5 @@
 import streamlit as st
 import time
-
 from utils.bq_utils import list_bq_datasets_in_project, list_bq_tables_in_dataset
 from utils.llm import get_llm
 from utils.prompt_template import get_prompt_template
@@ -59,10 +58,6 @@ with st.sidebar:
     def click_button():
         st.session_state.clicked = True
 
-    # show_model_params = st.button('Change Model Parameters', on_click=click_button)
-    # if show_model_params:
-    # st.button('Change Model Parameters', on_click=click_button)
-
     if st.session_state.clicked:
         show_model_params = False if st.button('Hide Model Parameters') else True
         st.slider("Temperature", min_value=0.0, max_value=1.0, step=0.01, key="temp", value=temp)
@@ -80,12 +75,6 @@ llm = get_llm(top_p, top_k, max_tok, temp)
 # retrieve and cache the prompt template
 GOOGLESQL_PROMPT = get_prompt_template()
 
-#tab1, tab2, tab3 = st.tabs(["Ask a Question", "Under the hood", "Example Questions"])
-#tab1 = st.tabs(["Ask a Question"])
-#tab1, tab2 = st.tabs(["Ask a Question", "Example Questions"])
-
-
-#with tab1:
 # Allow the user to view the text field to ask questions, only when a table has been selected
 dataset_and_table_selected = False
 if source_dataset_selected == "Please Select":
@@ -108,20 +97,19 @@ if dataset_and_table_selected:
     st.markdown(f"Please note this this question will use the data contained within table: "
                 f"**{table_selected}** to answer the question.")
     st.text_area("Enter your Prompt:", key="question", height=100, value="", on_change=clear_all)
-    st.text("exaample questions: ")
+    st.text("example questions: ")
     st.markdown("- how much is the biggest sales until now and from which customer?")
     st.markdown("- what is the top 5 highest sales and from which customer?")
 
     prompt_question = st.session_state.question
 
     @st.cache_data(show_spinner=False)
-    #st.cache_data(show_spinner=False)
 
     def submit_question():
         engine = get_sql_engine(source_dataset_selected)
         db = get_sql_db(engine, [table_selected])
         db_chain = get_db_chain(llm, db)
-        # @title Testing basic questions
+  
         t0 = time.time()
         final_prompt = GOOGLESQL_PROMPT.format(input=prompt_question, table_info=table_selected, top_k=2000000)
         
@@ -137,7 +125,6 @@ if dataset_and_table_selected:
         st.markdown("**Answer:**")
         answer = result["result"]
         st.success(answer)
-        #st.text(f"This query took {round(time.time() - t0,1)} seconds")
         return result
 
     if "load_state" not in st.session_state:

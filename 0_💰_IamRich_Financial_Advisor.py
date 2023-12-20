@@ -1,8 +1,8 @@
 import streamlit as st
 from streamlit.logger import get_logger
-import authrich
+#import authrich
 
-authrich.authenticate()
+#authrich.authenticate()
 LOGGER = get_logger(__name__)
 
 vNoLabel = """
