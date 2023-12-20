@@ -7,4 +7,4 @@ https://iamrich.bicarait.com
 This innovative app combines smart technology with personalized guidance to provide a comprehensive financial experience.
 
 ###Please check the Live Demo of the application in here:
-https://iamrich-bicarait-com-rzmyhdhywa-uc.a.run.app or https://iamrich.bicarait.com
+https://iamrich-bicarait-com-v3-rzmyhdhywa-uc.a.run.app/ or https://iamrich.bicarait.com

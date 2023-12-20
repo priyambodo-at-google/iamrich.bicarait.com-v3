@@ -1,7 +1,7 @@
 export GCP_REGION='us-central1'
 export GCP_PROJECT='work-mylab-machinelearning'
 export AR_REPO='iamrichv3-artifactregistry-bydoddi'  
-export SERVICE_NAME='iamrich-bicarait-com' 
+export SERVICE_NAME='iamrich-bicarait-com-v3' 
 
 #gcloud artifacts repositories create "$AR_REPO" --location="$GCP_REGION" --repository-format=Docker
 gcloud auth configure-docker "$GCP_REGION-docker.pkg.dev"
