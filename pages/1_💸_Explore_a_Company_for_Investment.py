@@ -1,7 +1,7 @@
 import streamlit as st
 import call_gemini as genai
 
-st.header("Discover the financial detail and information of a Company or Stock to invest", divider="rainbow")
+st.header('Discover the financial detail and information of a Company or Stock to invest', divider='rainbow')
 
 st.write("Powered by Google Gemini Large Language Model to explore and research for the financial information")
 st.subheader("Please enter your company name or stock symbol.")

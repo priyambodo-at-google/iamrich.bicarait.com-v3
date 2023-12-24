@@ -20,7 +20,7 @@ def run():
     st.set_page_config(page_icon="image/usd.ico")
     st.markdown(vNoLabel, unsafe_allow_html=True)
     st.write("# 💰 IamRich - Your Smart Personal Financial Advisor application (v3)")
-    st.subheader("//IamRich is powered by Google Cloud Generative AI!")
+    st.subheader("--> visit https://iamrich.priyambodo.com for new version!")
     st.write(html_code)
    
     st.markdown(
