@@ -8,7 +8,7 @@ gcloud auth configure-docker "$GCP_REGION-docker.pkg.dev"
 gcloud builds submit --tag "$GCP_REGION-docker.pkg.dev/$GCP_PROJECT/$AR_REPO/$SERVICE_NAME"
 
 gcloud run deploy "$SERVICE_NAME" \
-   --port=8080 \
+   --port=80 \
    --image="$GCP_REGION-docker.pkg.dev/$GCP_PROJECT/$AR_REPO/$SERVICE_NAME" \
    --allow-unauthenticated \
    --region=$GCP_REGION \
